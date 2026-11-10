@@ -1,0 +1,525 @@
+/* =====================================
+   RESET GENERAL
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f7f4;
+    color: #202020;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================
+   HEADER / NAVEGACIÓN
+===================================== */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 32px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 10;
+    color: white;
+}
+
+/* Nombre a la izquierda */
+
+.logo {
+    display: block;
+    flex-shrink: 0;
+
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+/* Menú a la derecha */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 35px;
+
+    margin-left: auto;
+}
+
+nav a {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    transition: opacity .3s;
+}
+
+nav a:hover {
+    opacity: .55;
+}
+
+
+/* =====================================
+   HERO / PORTADA
+===================================== */
+
+.hero {
+    position: relative;
+
+    height: 100vh;
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 10%;
+
+    color: white;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(90deg,
+            rgba(0, 0, 0, .45),
+            rgba(0, 0, 0, .08)),
+        url("images/portada.jpg") center 40% / cover no-repeat;
+
+    transform: scale(1.02);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8vw, 115px);
+    line-height: 1.05;
+    font-weight: 300;
+    letter-spacing: -5px;
+}
+
+.hero h1 em {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.hero-location {
+    margin-top: 35px;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 45px;
+    left: 5%;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.scroll span {
+    font-size: 18px;
+}
+
+.hero-number {
+    position: absolute;
+    bottom: 45px;
+    right: 5%;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* =====================================
+   GENERAL SECTIONS
+===================================== */
+
+.section {
+    padding: 120px 10%;
+}
+
+.section-heading {
+    margin-bottom: 65px;
+}
+
+.section-heading p,
+.about>p,
+.contact>p {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.section-heading h2,
+.about h2,
+.contact h2 {
+    font-size: clamp(42px, 6vw, 75px);
+    font-weight: 300;
+    letter-spacing: -3px;
+    margin-top: 20px;
+}
+
+.section-heading h2 em,
+.about h2 em,
+.contact h2 em {
+    font-family: 'Playfair Display', serif;
+}
+
+
+/* =====================================
+   PROJECTS / GALERÍAS
+===================================== */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 65px 22px;
+    align-items: start;
+}
+
+.project {
+    grid-column: span 1;
+}
+
+.project a {
+    display: block;
+    overflow: hidden;
+}
+
+/* Fotografías verticales */
+
+.project img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+
+    transition: transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+/* Efecto hover */
+
+.project a:hover img {
+    transform: scale(1.035);
+}
+
+/* Información de cada fotografía */
+
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 18px;
+    gap: 10px;
+}
+
+.project-info h3 {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.project-info span {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #777;
+}
+
+
+/* =====================================
+   EDITORIAL INFORMATION / SHAPELESS
+===================================== */
+
+.editorial-info {
+    margin-top: 35px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.editorial-info h3 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.editorial-info p {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #777;
+    margin-top: 8px;
+}
+
+
+/* =====================================
+   ABOUT
+===================================== */
+
+.about {
+    background: #eeece7;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 100px;
+    align-items: end;
+    margin-top: 40px;
+}
+
+.about-content p {
+    font-size: 14px;
+    line-height: 2;
+    color: #666;
+    max-width: 380px;
+    padding-bottom: 10px;
+}
+
+
+/* =====================================
+   CONTACT
+===================================== */
+
+.contact {
+    text-align: center;
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+
+.contact h2 {
+    margin: 45px 0;
+}
+
+.email {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    border-bottom: 1px solid #202020;
+    padding-bottom: 10px;
+
+    transition: opacity .3s;
+}
+
+.email:hover {
+    opacity: .5;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    padding: 30px 5%;
+    border-top: 1px solid #ddd;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+
+/* =====================================
+   RESPONSIVE / TABLETS
+===================================== */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+
+    .header {
+        padding: 25px 5%;
+    }
+
+    .logo {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 600px;
+        padding: 0 7%;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-location {
+        font-size: 8px;
+    }
+
+
+    /* GENERAL SECTIONS */
+
+    .section {
+        padding: 85px 7%;
+    }
+
+
+    /* GALERÍAS */
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 15px;
+    }
+
+    .project {
+        grid-column: span 1;
+    }
+
+    .project img {
+        aspect-ratio: 3 / 4;
+    }
+
+
+    /* EDITORIAL INFORMATION */
+
+    .editorial-info {
+        margin-top: 30px;
+    }
+
+
+    /* ABOUT */
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVE / MÓVILES PEQUEÑOS
+===================================== */
+
+@media (max-width: 420px) {
+
+    /* HEADER */
+
+    .header {
+        padding: 20px 4%;
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 7px;
+        letter-spacing: .5px;
+    }
+
+
+    /* HERO */
+
+    .hero-number {
+        display: none;
+    }
+
+
+    /* GALERÍAS */
+
+    .projects {
+        gap: 35px 12px;
+    }
+
+    .project-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .project-info h3 {
+        font-size: 13px;
+    }
+
+    .project-info span {
+        font-size: 8px;
+    }
+
+
+    /* EDITORIAL INFORMATION */
+
+    .editorial-info h3 {
+        font-size: 13px;
+    }
+
+    .editorial-info p {
+        font-size: 8px;
+        line-height: 1.6;
+    }
+
+}
